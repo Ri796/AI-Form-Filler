@@ -14,22 +14,24 @@ This is an active, ongoing project.
 -   **Secure Local Storage:** Uses the `chrome.storage.API` to securely store user profile data (e.g., name, email, address) locally on the user's browser.
 -   **Manual Form Filling:** Users can click the extension icon to automatically fill all detected form fields with their stored profile data.
 -   **Modular Codebase:** The JavaScript is organized into clear content scripts and popup scripts, making it maintainable and easy to extend.
-
+  
 ## 💡 How It's Smarter Than Standard Autofill
 
-Standard browser autofill (like in Chrome or Edge) is powerful but relies heavily on simple **keyword matching** and predefined `name` attributes (e.g., `<input name="email">`). This approach often fails on complex or poorly designed forms.
-
-This AI-powered agent is being designed to overcome these limitations in two key ways:
+This AI-powered agent is being designed to overcome the limitations of standard browser autofill in three key ways:
 
 1.  **Semantic Understanding (The AI Core):**
-    *   **Standard Autofill:** Sees `"Enter your e-mail"` and might not recognize it. It's looking for the keyword `email`.
-    *   **AI Form Filler:** Uses an NLP model to understand that `"Enter your e--mail"`, `"eMail Address"`, `"user_email"`, and `"Primary Contact Email"` all have the same **semantic meaning**. It classifies them all as an `email` field, making it far more robust and adaptable.
+    *   **Standard Autofill:** Relies on simple keyword matching (e.g., looking for the word "email"). It fails on variations like `"Enter your e-mail address"`.
+    *   **AI Form Filler:** Uses an NLP model to understand that `"eMail Address"`, `"user_email"`, and `"Primary Contact Email"` all share the same **semantic meaning**, making it far more adaptable.
 
-2.  **Contextual Awareness (Future Goal):**
-    *   **Standard Autofill:** On a checkout page with two address forms (Billing and Shipping), it often gets confused and fills both with the same information.
-    *   **AI Form Filler (Vision):** The long-term goal is for the model to analyze the context of the entire form. It would recognize the `"Billing Address"` section and the `"Shipping Address"` section as distinct entities, allowing the user to fill them with different stored profiles.
+2.  **Language Independence (The Multilingual Goal):**
+    *   **Standard Autofill:** Is completely language-locked. It cannot understand a form in French or Spanish.
+    *   **AI Form Filler (Vision):** The backend is being designed with **multilingual sentence embedding models**. These models understand that "First Name" (English), "Prénom" (French), and "Nombre" (Spanish) all represent the same concept. This will allow the agent to work accurately on forms in dozens of languages without needing separate models for each.
 
-This project aims to move from a rigid, keyword-based system to a flexible, intelligent agent that truly understands the **intent** of a web form.
+3.  **Contextual Awareness (The Long-Term Goal):**
+    *   **Standard Autofill:** Often gets confused by forms with multiple sections, like filling both "Billing Address" and "Shipping Address" with the same information.
+    *   **AI Form Filler (Vision):** The long-term goal is for the model to analyze the context of the entire form, recognizing distinct sections and allowing for more intelligent, profile-based filling.
+
+This project aims to move from a rigid, keyword-based system to a flexible, intelligent agent that truly understands the **intent** of a web form, **regardless of the language.**
 
 ## 🚀 How to Run (Frontend Demo)
 
