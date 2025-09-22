@@ -28,10 +28,10 @@ function loadProfile() {
   });
 }
 
-// NEW FUNCTION: Send a message to the content script to fill the form.
+// Send a message to the content script to fill the form.
 function fillForm() {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    // The message can be any JSON-serializable object.
+  
     chrome.tabs.sendMessage(tabs[0].id, { action: "fillForm" });
   });
 }
@@ -39,4 +39,5 @@ function fillForm() {
 // Add event listeners.
 document.getElementById('saveButton').addEventListener('click', saveProfile);
 document.getElementById('fillButton').addEventListener('click', fillForm);
+
 document.addEventListener('DOMContentLoaded', loadProfile);
