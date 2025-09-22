@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Form Filler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      padding: 10px;
+    }
+    h3 {
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 95%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 5px; /* Added margin */
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #fillButton { /* Style for our new button */
+      background-color: #28a745;
+    }
+    #fillButton:hover {
+      background-color: #218838;
+    }
+    #status {
+      margin-top: 10px;
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h3>My Profile</h3>
+
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="firstName">
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" name="lastName">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email">
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone">
+  </div>
+
+  <button id="saveButton">Save Profile</button>
+  <!-- Our new "Fill Form" button -->
+  <button id="fillButton">Fill Form on This Page</button>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
